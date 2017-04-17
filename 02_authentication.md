@@ -37,7 +37,9 @@ This yields the following response:
 
 #### Developer registration
 
-1. Go to [the event registration page](https://www.thecollegefever.com/) and register yourself.
+To be able to access some of the high authority API features, you would need a developer account. Also, a developer account is necessary for participating in the competition. Thus, to get an account, follow these steps:
+
+1. Go to [the event registration page](https://www.thecollegefever.com/events/hacking-the-iot) and register yourself.
 
 2. Post registration, your account would be activated within 24 hours. You will get an email with your registration details once your account is activated.
 
@@ -47,14 +49,18 @@ This yields the following response:
 
 For the login procedure, use the following endpoint:
 
-**Method:** POST  
-**Headers:**
-Content-Type: *application/json*  
-**Body:**
+| Attribute | Value |
+|---|---|
+| URL | ritanugoonj.in/login |
+| Method | POST |
+| Headers | Content-Type: *application/json* |
+
+and use the following body (sample values given):
+
 ```json
 {
-  "username": "...",
-  "password": "..."
+  "username": "nethome_fan",
+  "password": "password"
 }
 ```
 You can use either email or username to log in. Using both of them at once would throw an error.
@@ -64,7 +70,7 @@ This yields the following response:
 {
   "status": "success",
   "data": {
-    "token": "..."
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MX0.4XOtShiTei_JuP0nakNtFeBBKbmi_eUcCuQOAui-iaQ"
   }
 }
 ```
@@ -75,4 +81,4 @@ The token is a [JWT](https://jwt.io/) token which is a key that identifies a par
 | Content-Type | application/json |
 | Authorization | JWT *your_token* |
 
-Failing to put this on the header would result in a **403 Unauthorized** error.
+Failing to put this on the header would result in a **401 Unauthorized** error.
