@@ -17,3 +17,4 @@ This repo consists of all the documentation on the NetHome API. Feel free to bro
 
 1. [About the API](01_about_the_api.md)
 2. [Authentication](02_authentication.md)
+3. [Managing Homes](03_managing_homes.md)
